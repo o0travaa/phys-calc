@@ -82,7 +82,7 @@ func density() {
 			fmt.Println("Error!")
 			return
 		}
-		fmt.Printf("Result: V = %d\n", p/m)
+		fmt.Printf("Result: V = %d\n", m/p)
 	} else if density_m == "" && density_p != "" && density_V != "" {
 		p, err1 := strconv.Atoi(density_p)
 		V, err2 := strconv.Atoi(density_V)
