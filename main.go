@@ -12,9 +12,9 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 
 	for {
-		fmt.Print("Select ~> ")
 		fmt.Println("1) S = V * t")
 		fmt.Println("2) ρ = m / t")
+		fmt.Print("Select ~> ")
 
 		input, _ := reader.ReadString('\n')
 		input = strings.TrimSpace(input)
