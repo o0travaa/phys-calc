@@ -95,3 +95,33 @@ func density() {
 		fmt.Println("Error!")
 	}
 }
+
+func gravity() {
+	reader := bufio.NewReader(os.Stdin)
+
+	fmt.Print("Enter \"F\" (or press Enter if empty) ~> ")
+	gravityF, _ := reader.ReadString('\n')
+	gravityF = strings.TrimSpace(gravityF)
+
+	fmt.Print("Enter \"m\" (or press Enter if empty) ~> ")
+	gravityM, _ := reader.ReadString('\n')
+	gravityM = strings.TrimSpace(gravityM)
+
+	if gravityF == "" && gravityM != "" {
+		m, err := strconv.ParseFloat(gravityM, 64)
+		if err != nil {
+			fmt.Println("Error!")
+			return
+		}
+		fmt.Printf("Result: F = %.3f\n", m*10)
+	} else if gravityM == "" && gravityF != "" {
+		F, err := strconv.ParseFloat(gravityF, 64)
+		if err != nil {
+			fmt.Println("Error!")
+			return
+		}
+		fmt.Printf("Result: m = %.3f\n", F/10)
+	} else {
+		fmt.Println("Error!")
+	}
+}

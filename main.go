@@ -14,6 +14,7 @@ func main() {
 	for {
 		fmt.Println("1) S = V * t")
 		fmt.Println("2) ρ = m / t")
+		fmt.Println("3) F = m * g")
 		fmt.Print("Select ~> ")
 
 		input, _ := reader.ReadString('\n')
@@ -30,6 +31,10 @@ func main() {
 			speed()
 		case 2:
 			density()
+		case 3:
+			gravity()
+		default:
+			fmt.Println("Error!")
 		}
 	}
 }
