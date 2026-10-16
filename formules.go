@@ -12,41 +12,41 @@ func speed() {
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Print("Enter \"t\" (or press Enter if empty) ~> ")
-	speed_t, _ := reader.ReadString('\n')
-	speed_t = strings.TrimSpace(speed_t)
+	speedT, _ := reader.ReadString('\n')
+	speedT = strings.TrimSpace(speedT)
 
 	fmt.Print("Enter \"V\" (or press Enter if empty) ~> ")
-	speed_V, _ := reader.ReadString('\n')
-	speed_V = strings.TrimSpace(speed_V)
+	speedV, _ := reader.ReadString('\n')
+	speedV = strings.TrimSpace(speedV)
 
 	fmt.Print("Enter \"S\" (or press Enter if empty) ~> ")
-	speed_S, _ := reader.ReadString('\n')
-	speed_S = strings.TrimSpace(speed_S)
+	speedS, _ := reader.ReadString('\n')
+	speedS = strings.TrimSpace(speedS)
 
-	if speed_S == "" && speed_t != "" && speed_V != "" {
-		t, err1 := strconv.Atoi(speed_t)
-		V, err2 := strconv.Atoi(speed_V)
+	if speedS == "" && speedT != "" && speedV != "" {
+		t, err1 := strconv.ParseFloat(speedT, 64)
+		V, err2 := strconv.ParseFloat(speedV, 64)
 		if err1 != nil || err2 != nil {
 			fmt.Println("Error!")
 			return
 		}
-		fmt.Printf("Result: S = %d\n", t*V)
-	} else if speed_V == "" && speed_t != "" && speed_S != "" {
-		t, err1 := strconv.Atoi(speed_t)
-		S, err2 := strconv.Atoi(speed_S)
+		fmt.Printf("Result: S = %.3f\n", t*V)
+	} else if speedV == "" && speedT != "" && speedS != "" {
+		t, err1 := strconv.ParseFloat(speedT, 64)
+		S, err2 := strconv.ParseFloat(speedS, 64)
 		if err1 != nil || err2 != nil {
 			fmt.Println("Error!")
 			return
 		}
-		fmt.Printf("Result: V = %d\n", S/t)
-	} else if speed_t == "" && speed_V != "" && speed_S != "" {
-		V, err1 := strconv.Atoi(speed_V)
-		S, err2 := strconv.Atoi(speed_S)
+		fmt.Printf("Result: V = %.3f\n", S/t)
+	} else if speedT == "" && speedV != "" && speedS != "" {
+		V, err1 := strconv.ParseFloat(speedV, 64)
+		S, err2 := strconv.ParseFloat(speedS, 64)
 		if err1 != nil || err2 != nil {
 			fmt.Println("Error!")
 			return
 		}
-		fmt.Printf("Result: t = %d\n", S/V)
+		fmt.Printf("Result: t = %.3f\n", S/V)
 	} else {
 		fmt.Println("Error!")
 	}
@@ -56,41 +56,41 @@ func density() {
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Print("Enter \"ρ\" (or press Enter if empty) ~> ")
-	density_p, _ := reader.ReadString('\n')
-	density_p = strings.TrimSpace(density_p)
+	densityP, _ := reader.ReadString('\n')
+	densityP = strings.TrimSpace(densityP)
 
 	fmt.Print("Enter \"V\" (or press Enter if empty) ~> ")
-	density_V, _ := reader.ReadString('\n')
-	density_V = strings.TrimSpace(density_V)
+	densityV, _ := reader.ReadString('\n')
+	densityV = strings.TrimSpace(densityV)
 
 	fmt.Print("Enter \"m\" (or press Enter if empty) ~> ")
-	density_m, _ := reader.ReadString('\n')
-	density_m = strings.TrimSpace(density_m)
+	densityM, _ := reader.ReadString('\n')
+	densityM = strings.TrimSpace(densityM)
 
-	if density_p == "" && density_V != "" && density_m != "" {
-		m, err1 := strconv.Atoi(density_m)
-		V, err2 := strconv.Atoi(density_V)
+	if densityP == "" && densityV != "" && densityM != "" {
+		m, err1 := strconv.ParseFloat(densityM, 64)
+		V, err2 := strconv.ParseFloat(densityV, 64)
 		if err1 != nil || err2 != nil {
 			fmt.Println("Error!")
 			return
 		}
-		fmt.Printf("Result: ρ = %d\n", m/V)
-	} else if density_V == "" && density_p != "" && density_m != "" {
-		p, err1 := strconv.Atoi(density_p)
-		m, err2 := strconv.Atoi(density_m)
+		fmt.Printf("Result: ρ = %.3f\n", m/V)
+	} else if densityV == "" && densityP != "" && densityM != "" {
+		p, err1 := strconv.ParseFloat(densityP, 64)
+		m, err2 := strconv.ParseFloat(densityM, 64)
 		if err1 != nil || err2 != nil {
 			fmt.Println("Error!")
 			return
 		}
-		fmt.Printf("Result: V = %d\n", m/p)
-	} else if density_m == "" && density_p != "" && density_V != "" {
-		p, err1 := strconv.Atoi(density_p)
-		V, err2 := strconv.Atoi(density_V)
+		fmt.Printf("Result: V = %.3f\n", m/p)
+	} else if densityM == "" && densityP != "" && densityV != "" {
+		p, err1 := strconv.ParseFloat(densityP, 64)
+		V, err2 := strconv.ParseFloat(densityV, 64)
 		if err1 != nil || err2 != nil {
 			fmt.Println("Error!")
 			return
 		}
-		fmt.Printf("Result: m = %d\n", p/V)
+		fmt.Printf("Result: m = %.3f\n", p/V)
 	} else {
 		fmt.Println("Error!")
 	}
