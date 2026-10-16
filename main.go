@@ -13,7 +13,7 @@ func main() {
 
 	for {
 		fmt.Println("1) S = V * t")
-		fmt.Println("2) ρ = m / t")
+		fmt.Println("2) ρ = m / V")
 		fmt.Println("3) F = m * g")
 		fmt.Print("Select ~> ")
 
