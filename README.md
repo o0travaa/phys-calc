@@ -29,7 +29,7 @@ cd phys-calc
 You can run the application immediately using the Go toolchain:
 
 ```bash
-go run main.go
+go run .
 ```
 
 ### Building the Executable
